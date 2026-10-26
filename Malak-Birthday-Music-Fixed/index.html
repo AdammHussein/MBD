@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#e5bbd0">
+  <meta name="description" content="A little birthday universe, made with love for Malak.">
+  <title>For Malak — a little birthday universe ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="animations.css">
+  <script>window.onSpotifyIframeApiReady = function(api){window.spotifyEmbedApi = api; window.dispatchEvent(new Event('spotify-api-ready'));};</script>
+  <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orb orb-three"></div><div id="drifting-hearts"></div></div>
+  <header class="site-header">
+    <div class="brand"><span class="brand-star">✳</span> a little something for <strong>Malak</strong></div>
+    <div class="header-actions"><span class="chapter" id="chapter">01 <span>/ 05</span></span><button class="icon-button" id="soundBtn" aria-pressed="false" aria-label="Open background song player" title="Open the background song player"><span id="soundIcon" aria-hidden="true">♫</span></button></div>
+  </header>
+  <main id="experience">
+    <!-- Scene 1: welcome; the next chapter is the heart-catching game -->
+    <section class="scene is-active" id="welcome" aria-label="Your birthday surprise">
+      <div class="welcome-layout">
+        <div class="welcome-art" aria-hidden="true"><div class="art-halo"></div><img src="assets/gift.svg" class="gift-art" alt=""><span class="art-spark spark-a">✦</span><span class="art-spark spark-b">✧</span><span class="art-spark spark-c">✳</span></div>
+        <p class="eyebrow"><span class="tiny-dot"></span> MADE JUST FOR YOU <span class="tiny-dot"></span></p>
+        <h1>Happy Birthday,<br><em>Malak.</em> <span class="headline-heart">♡</span></h1>
+        <p class="intro">To the girl with the most beautiful eyes and a heart that makes everything feel a little brighter.</p>
+        <button class="primary-button shimmer-button" id="openGift">Open your little universe <span aria-hidden="true">↗</span></button>
+        <p class="microcopy">Five sweet moments, one very special person.</p>
+      </div>
+    </section>
+
+    <!-- Scene 2: play the heart-catching game first -->
+    <section class="scene" id="heartGame" aria-label="Catch the hearts game" inert>
+      <div class="scene-heading game-heading"><span class="eyebrow">THE FIRST LITTLE SURPRISE</span><h2>Catch all the <em>love</em> ♡</h2><p>Move your mouse, finger, or arrow keys to catch 12 hearts in the little gift.</p></div>
+      <div class="game-area" id="gameArea"><canvas id="heartCanvas" aria-label="Hearts fall into a gift box as you catch them"></canvas><div class="game-hud"><span id="heartCount">0 / 12 hearts</span><div class="progress-track"><div id="gameFill"></div></div></div></div>
+      <button class="text-button" id="skipGame">Skip the game →</button>
+    </section>
+
+    <!-- Scene 3: the letter -->
+    <section class="scene" id="letterScene" aria-label="A birthday letter" inert>
+      <div class="scene-heading"><span class="eyebrow">WORDS I WISH I COULD WRAP UP</span><h2>A letter <em>for you</em></h2><p>Some things deserve to be said a little more slowly.</p></div>
+      <button class="envelope-button" id="envelopeButton" aria-label="Open your letter"><span class="envelope-shadow"></span><span class="envelope-wrap"><img src="assets/envelope.svg" alt="A pink and white envelope"><span class="envelope-heart">♥</span></span><span class="envelope-label">tap the envelope to open</span></button>
+      <article class="letter-paper" id="letterPaper" hidden tabindex="-1">
+        <span class="paper-corner">✧</span><p class="letter-date">to my favorite person ♡</p>
+        <h3>Dear Malak,</h3>
+        <p>Happy birthday to the most beautiful soul I know.</p>
+        <p>Your eyes are genuinely one of my favorite things in this world. There's so much warmth and light in them, and somehow they make even the simplest moment feel extraordinary. I could look at your eyes a thousand times and still find something new to adore.</p>
+        <p>And your beauty is so much more than a pretty face. It's in your smile, your kindness, your laugh, and all the little things that make you so wonderfully <em>you.</em></p>
+        <p>Even when we're apart sometimes, I'm grateful for every message, every laugh, and every moment our paths cross. The distance doesn't take away how special you are to me.</p>
+        <p>I'm so glad we know each other. Of all the people I could have met, I'm endlessly thankful that life introduced me to you.</p>
+        <p>I hope this new year brings you soft days, happy surprises, beautiful memories, and every good thing you've been wishing for.</p>
+        <p class="letter-signature">Happy birthday, beautiful. ♡</p>
+      </article>
+      <button class="primary-button scene-next" id="afterLetter" hidden>One more surprise <span>↗</span></button>
+    </section>
+
+
+
+
+    <!-- Scene 4: birthday celebration -->
+    <section class="scene" id="finaleScene" aria-label="Happy birthday celebration" inert>
+      <div class="confetti-field" id="confettiField" aria-hidden="true"></div>
+      <div class="finale-content"><span class="finale-emblem">✦ ♡ ✦</span><p class="eyebrow">AND FINALLY, ONE MORE THING</p><h2 class="finale-title">Happy Birthday,<br><em>Malak!</em></h2><div class="finale-card"><p>Even when we're miles apart, you're someone I'm so glad I got to know. Here's to your beautiful eyes, your even more beautiful heart, and a year full of reasons to smile.</p><span>with all my love ♡</span></div><button class="primary-button" id="toPlaylist">I saved you some songs <span>♫</span></button><button class="text-button" id="replayFirst">↺ Start from the beginning</button></div>
+    </section>
+
+    <!-- Scene 5: songs and secret -->
+    <section class="scene" id="playlistScene" aria-label="Music chosen for you" inert>
+      <div class="scene-heading"><span class="eyebrow">THE SOUNDTRACK OF THIS LITTLE GIFT</span><h2>Songs that make me <em>think of you</em></h2><p>Four picks for you (including a Narein replay). Choose a song and press Play below. Spotify sometimes needs sign-in or only allows a preview.</p></div>
+      <div class="playlist-layout"><div class="song-list" id="songList">
+        <div class="song-card" data-track="5L2ELXkO17Iu9J8hwMktVJ"><span class="song-vinyl"><img src="assets/vinyl.svg" alt=""></span><span class="song-info"><strong>Helaf El Amar</strong><small>George Wassouf</small></span><button class="song-select" aria-label="Play Helaf El Amar on page">Select ♫</button><a class="spotify-link" href="https://open.spotify.com/track/5L2ELXkO17Iu9J8hwMktVJ" target="_blank" rel="noopener noreferrer" aria-label="Open Helaf El Amar on Spotify">↗</a></div>
+        <div class="song-card" data-track="7HDHDnI7FnZ9Prbl2Jplcd"><span class="song-vinyl"><img src="assets/vinyl.svg" alt=""></span><span class="song-info"><strong>Garahouna</strong><small>George Wassouf</small></span><button class="song-select" aria-label="Play Garahouna on page">Select ♫</button><a class="spotify-link" href="https://open.spotify.com/track/7HDHDnI7FnZ9Prbl2Jplcd" target="_blank" rel="noopener noreferrer" aria-label="Open Garahouna on Spotify">↗</a></div>
+        <div class="song-card" data-track="3D33hlROnv1lNCWIXIGsL2"><span class="song-vinyl"><img src="assets/vinyl.svg" alt=""></span><span class="song-info"><strong>Narein</strong><small>TUL8TE</small></span><button class="song-select" aria-label="Play Narein on page">Select ♫</button><a class="spotify-link" href="https://open.spotify.com/track/3D33hlROnv1lNCWIXIGsL2" target="_blank" rel="noopener noreferrer" aria-label="Open Narein on Spotify">↗</a></div>
+        <div class="song-card" data-track="3D33hlROnv1lNCWIXIGsL2"><span class="song-vinyl"><img src="assets/vinyl.svg" alt=""></span><span class="song-info"><strong>Narein — one more time ♡</strong><small>TUL8TE · your fourth link is a repeat</small></span><button class="song-select" aria-label="Replay Narein on page">Select ♫</button><a class="spotify-link" href="https://open.spotify.com/track/3D33hlROnv1lNCWIXIGsL2" target="_blank" rel="noopener noreferrer" aria-label="Open Narein on Spotify">↗</a></div>
+      </div><div class="player-slot" id="playerSlot"><div class="player-placeholder"><span>♫</span><strong>Your little listening corner</strong><p>Choose a song to load its playable Spotify player here.</p></div></div></div>
+      <div class="upload-fallback"><label for="localSongFile">Spotify giving an error? <strong>Play a song file instead</strong></label><input id="localSongFile" type="file" accept="audio/*" aria-label="Choose an audio file to play here"><audio id="localSongPlayer" controls hidden></audio><p>Use an audio file you have permission to use. Music isn't downloaded from Spotify.</p></div>
+      <button class="secret-button" id="secretButton">♡ &nbsp; Psst… there's one last little secret</button>
+      <button class="text-button" id="replayLast">↺ Replay the surprise</button>
+    </section>
+  </main>
+  <aside class="background-dock" id="backgroundDock" hidden aria-label="Background music player">
+    <div class="background-head"><div><small>THE BACKGROUND SONG</small><strong>No. 1 Party Anthem · Arctic Monkeys</strong></div><button id="closeBackground" aria-label="Close background music" title="Close background music">×</button></div>
+    <div id="backgroundSpotifyPlayer" class="background-player"></div>
+    <p class="background-note" id="backgroundHint">Spotify may require a tap on its own Play button. To play automatically and reliably after opening the gift, use your own audio file below.</p>
+    <label class="background-picker">Or choose a local audio file <input id="backgroundFile" type="file" accept="audio/*"></label>
+    <audio id="localBackground" controls loop hidden></audio>
+    <a class="background-open" href="https://open.spotify.com/track/5TTGoX70AFrTvuEtqHK37S" target="_blank" rel="noopener noreferrer">Open background track on Spotify ↗</a>
+  </aside>
+  <footer class="site-footer"><span>made with care ✶ just for you</span><span class="footer-hearts">♡ ♡ ♡</span></footer>
+  <dialog class="secret-dialog" id="secretDialog"><button class="dialog-close" id="closeSecret" aria-label="Close secret message">×</button><span class="dialog-symbol">♡</span><p class="eyebrow">ONE LAST LITTLE THING</p><h2>You are someone <em>extraordinary.</em></h2><p>Whether we're together or far apart, I'll always be happy that our stories crossed. Never forget how special you are, Malak.</p><button class="primary-button" id="secretOkay">Keep smiling ✨</button></dialog>
+</body>
+</html>
